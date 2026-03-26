@@ -10,48 +10,47 @@
 </head>
 <body>
 
-    <header class="hero-section">
-        <!-- ===== Navbar ===== -->
-        <nav class="navbar">
-            <div class="container nav-content">
-                <div class="logo-group">
-                    <a href="#" class="logo">Auto<span>Care</span></a>
-                    <ul class="nav-links" id="menuList">
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+    <header class="hero">
+        <nav class="site-nav" aria-label="Primary">
+            <div class="top-bar">
+                <div class="container nav-row">
+                    <div class="brand-group">
+                        <a href="#" class="brand">Auto<span>Care</span></a>
+                        <ul class="menu-links" id="menuList">
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="cta-button">Book Now</a>
+
+                    <button class="menu-toggle" id="menuBtn" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
-
-                <a href="#contact" class="book-btn">Book Now</a>
-
-                <!-- Mobile Menu Toggle -->
-                <button class="menu-icon" id="menuBtn" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
+
+            <section class="info-strip container" aria-label="Contact information">
+                <div class="info-row">
+                    <div class="info-item">
+                        <span>📍 6391 Elgin St. Celina, Delaware 10299</span>
+                    </div>
+                    <div class="info-item">
+                        <span>📞 (406) 555-0120</span>
+                    </div>
+                    <div class="info-item">
+                        <span>✉️ carwash@example.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span>🕒 Mon - Sun: Open 24/7</span>
+                    </div>
+                </div>
+            </section>
         </nav>
     </header>
-
-    <!-- ===== Contact Info Bar ===== -->
-    <div class="contact-bar">
-        <div class="container contact-content">
-            <div class="contact-item">
-                <span>📍 6391 Elgin St. Celina, Delaware 10299</span>
-            </div>
-            <div class="contact-item">
-                <span>📞 (406) 555-0120</span>
-            </div>
-            <div class="contact-item">
-                <span>✉️ carwash@example.com</span>
-            </div>
-            <div class="contact-item">
-                <span>🕒 Mon - Sun: Open 24/7</span>
-            </div>
-        </div>
-    </div>
 
     <!-- ===== Mobile Toggle Script ===== -->
     <script>
