@@ -1,0 +1,186 @@
+/* ===== AutoCare Colour Palette ===== */
+:root {
+  /* Primary — A deep navy blue. Used across the navbar, footer, headings, and hero sections to set a professional tone. */
+  --color-primary: #0F2B4C;
+
+  /* Secondary — A sharp, energetic orange that draws the eye. Used sparingly on buttons, call-to-actions, and highlights to guide the user toward key actions. */
+  --color-secondary: #E8620A;
+
+  /* Neutral — A soft off-white background that keeps things clean and easy on the eyes. */
+  --color-bg: #F5F5F5;
+  /* Neutral — A warm dark grey for body text. Readable without the harshness of pure black. */
+  --color-text: #4A4A4A;
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden; /* Prevents unexpected horizontal scrolling */
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+/* ===== Container — centered layout with consistent side spacing ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: var(--color-primary);
+    padding: 20px 0;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Logo — "Auto" in white, "Care" in orange */
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+.logo span {
+    color: var(--color-secondary);
+}
+
+/* Nav links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-secondary);
+}
+
+/* CTA button */
+.book-btn {
+    background-color: var(--color-secondary);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #cf5508;
+}
+
+/* Menu Toggle icon — hidden on desktop */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.menu-icon span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ===== Contact Info Bar ===== */
+.contact-bar {
+    padding: 24px 0; /* Made bigger and more spacious */
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 64px; /* Much wider spacing between items */
+}
+
+.contact-item {
+    font-size: 1.05rem; /* Increased text size */
+    font-weight: 500;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+}
+
+/* ===== Mobile Responsive (768px and below) ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-primary);
+        padding: 20px;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .book-btn {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar {
+        position: relative;
+    }
+}

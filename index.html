@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="hero-section">
+        <!-- ===== Navbar ===== -->
+        <nav class="navbar">
+            <div class="container nav-content">
+                <div class="logo-group">
+                    <a href="#" class="logo">Auto<span>Care</span></a>
+                    <ul class="nav-links" id="menuList">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <a href="#contact" class="book-btn">Book Now</a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-icon" id="menuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== Contact Info Bar ===== -->
+    <div class="contact-bar">
+        <div class="container contact-content">
+            <div class="contact-item">
+                <span>📍 6391 Elgin St. Celina, Delaware 10299</span>
+            </div>
+            <div class="contact-item">
+                <span>📞 (406) 555-0120</span>
+            </div>
+            <div class="contact-item">
+                <span>✉️ carwash@example.com</span>
+            </div>
+            <div class="contact-item">
+                <span>🕒 Mon - Sun: Open 24/7</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Mobile Toggle Script ===== -->
+    <script>
+        const btn = document.getElementById('menuBtn');
+        const list = document.getElementById('menuList');
+
+        btn.addEventListener('click', () => {
+            list.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>
