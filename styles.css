@@ -2,6 +2,7 @@
   --content-width: min(1200px, 100% - 40px);
   --brand-blue: #0f2b4c;
   --brand-orange: #e8620a;
+  --brand-orange-dark: #cf5508;
   --text-light: #f2f6fb;
   --font-title: "Outfit", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -35,10 +36,11 @@ body {
 .site-nav {
   position: absolute;
   inset: 0 0 auto 0;
+  z-index: 10;
 }
 
 .top-bar {
-  padding: 30px 0;
+  padding: 25px 0;
   background: rgba(10, 24, 44, 0.45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -86,18 +88,70 @@ body {
   color: var(--brand-orange);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .cta-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   color: #fff;
   text-decoration: none;
-  background: var(--brand-orange);
-  padding: 10px 24px;
-  border-radius: 6px;
-  font-weight: 600;
+  background: transparent;
+  border: 2px solid var(--brand-orange);
+  min-height: 52px;
+  padding: 0 34px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 700;
   font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--brand-orange);
+  opacity: 0;
+  z-index: -1;
+}
+
+.cta-button span {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-button svg {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  pointer-events: none;
 }
 
 .cta-button:hover {
-  background: #cf5508;
+  color: #fff;
+}
+
+.cta-button:hover::before {
+  opacity: 1;
+}
+
+.cta-button:hover {
+  border-color: var(--brand-orange-dark);
 }
 
 .menu-toggle {
@@ -182,11 +236,12 @@ body {
   letter-spacing: 0.02em;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(180deg, #f24f41, #d63f32);
+  background: var(--brand-orange);
+  cursor: pointer;
 }
 
 .hero-cta:hover {
-  filter: brightness(1.06);
+  background: var(--brand-orange-dark);
 }
 
 @media (max-width: 992px) {
@@ -222,7 +277,7 @@ body {
     display: flex;
   }
 
-  .cta-button {
+  .nav-actions {
     display: none;
   }
 
